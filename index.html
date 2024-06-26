@@ -2,53 +2,79 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-	 <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
-      <div class="search-box">
-        <i class="fa-solid fa-location-dot"></i>
-        <input type="text" placeholder="Enter your location" />
-        <button class="fa-solid fa-magnifying-glass"></button>
-      </div>
-      <div class="error">
-        <p>Invalid city name</p>
-      </div>
-      <div class="weather">
-        <div class="weather-image">
-          <i class="fa-solid fa-cloud"></i>
+      <header class="header">
+        <h1 class="header__title">Weather App</h1>
+      </header>
+      <main class="main">
+        <div class="search-bar">
+          <input
+            type="text"
+            class="search-bar__input"
+            id="city-input"
+            placeholder="Введите город"
+          />
+          <button class="search-bar__button" id="search-button">Поиск</button>
         </div>
-        <h1 class="temp">22 &#8451</h1>
-        <h2 class="city">London</h2>
-              <div class="details">
-        <div class="col">
-              <i class="fa-solid fa-water"></i>
-            <div>
-                <p class="humidity">50%</p>
-                <p>Humidity</p>
+        <div class="weather-data" id="weather-data">
+          <div class="city-info">
+            <h2 class="city-info__name" id="city-name"></h2>
+            <img
+              src=""
+              alt="Погода"
+              class="city-info__icon"
+              id="weather-icon"
+            />
+          </div>
+          <div class="weather-details">
+            <div class="weather-details__item">
+              <p class="weather-details__temp">
+                Температура: <span id="temperature"></span>°C
+              </p>
             </div>
-        </div>
-        <div class="col">
-             <i class="fa-solid fa-wind"></i>
-            <div>
-                <p class="wind">15 km/h</p>
-                <p>Wind Speed</p>
+            <div class="weather-details__item">
+              <p class="weather-details__description">
+                Описание: <span id="description"></span>
+              </p>
             </div>
+            <div class="weather-details__item">
+              <p class="weather-details__wind">
+                Скорость ветра: <span id="wind"></span> м/с
+              </p>
+            </div>
+            <div class="weather-details__item">
+              <p class="weather-details__humidity">
+                Влажность: <span id="humidity"></span>%
+              </p>
+            </div>
+            <div class="weather-details__item">
+              <p class="weather-details__pressure">
+                Давление: <span id="pressure"></span> гПа
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-      </div>
+        <div class="error-message" id="error-message"></div>
+        <div class="history">
+          <h2 class="history__title">История поиска</h2>
+          <button class="history__toggle" id="toggle-history">Свернуть</button>
+          <ul class="history__list" id="city-history"></ul>
+        </div>
+      </main>
     </div>
 
-	 
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
